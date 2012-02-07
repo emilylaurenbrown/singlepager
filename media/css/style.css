@@ -1,0 +1,223 @@
+/* STYLESHEET */
+
+
+
+/* ----- BASE ----- */
+
+html {
+	background-color: rgb(255, 255, 255);
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: rgb(255, 255, 255);
+	color: rgb(85, 85, 85);
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 100%; /* 16px */
+	line-height: 1.5em;
+	margin: auto;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: rgb(0, 51, 102);
+	line-height: 1.25em;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 2.625em; /* 42px / 16px */
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 2.125em; /* 34px / 16px */
+	font-weight: 300;
+}
+
+h3 {
+	font-size: 1.75em; /* 28px / 16px */
+	font-weight: 300;
+}
+
+
+a,
+a:link {
+	color: rgb(102, 194, 239);
+}
+
+a:visited,
+a:active {
+	color: rgb(102, 194, 239);	
+}
+
+a:hover,
+a:focus {
+		color: rgb(0, 51, 102);
+}
+
+ol,
+ul {
+	
+}
+
+blockquote {
+	
+}
+
+form {
+
+}
+
+fieldset {
+	border: none;
+}
+
+label {
+
+}
+
+input {
+	border: 1px solid #E6E6E6;
+	border-color: rgba(0, 0, 0, 0.125);
+	border-top-color: rgba(0, 0, 0, 0.25);
+	background: rgb(250, 250, 250);
+	-webkit-border-radius: 0.35em;
+	-moz-border-radius: 0.35em;
+	-o-border-radius: 0.35em;
+	border-radius: 0.35em;
+	-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
+	-moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
+	-o-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
+	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
+	color: #707070;
+	font-size: 1em;
+	margin: 0 0 0.5em;
+	padding: 0.49em 0;
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+
+/* --- Buttons --- */
+
+.button {
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background: linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
+	background: -moz-linear-gradient(top, rgba(148, 212, 244, 1) 0%, rgba(102, 194, 239, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(148, 212, 244, 1)), color-stop(100%,rgba(102, 194, 239, 1)));
+	background: -webkit-linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
+	background: -o-linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
+	background: -ms-linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
+	background: linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 0.35em;
+	-moz-border-radius: 0.35em;
+	border-radius: 0.35em;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	color: white;
+	display: inline-block;
+	font-family: 'Helvetica Neue', 'Helvetica', Sans-serif;
+	font-weight: lighter;
+	line-height: 1;
+	padding: 0.666666666666667em 1em;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: none;
+	-webkit-transition: all 250ms ease;
+	-moz-transition: all 250ms ease;
+	-o-transition: all 250ms ease;
+	transition: all 250ms ease;
+}
+	.button:hover {
+		background-color: rgb(99, 188, 232);
+				background: -moz-linear-gradient(top, rgba(148,212,244,1) 0%, rgba(99, 188, 232,1) 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(148,212,244,1)), color-stop(100%,rgba(99, 188, 232,1)));
+				background: -webkit-linear-gradient(top, rgba(148,212,244,1) 0%,rgba(99, 188, 232,1) 100%);
+				background: -o-linear-gradient(top, rgba(148,212,244,1) 0%,rgba(99, 188, 232,1) 100%);
+				background: -ms-linear-gradient(top, rgba(148,212,244,1) 0%,rgba(99, 188, 232,1) 100%);
+				background: linear-gradient(top, rgba(148,212,244,1) 0%,rgba(99, 188, 232,1) 100%);
+				-webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+				   -moz-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+				     -o-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+				        box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
+				color: rgb(255, 255, 255);
+				text-shadow: none;
+	}
+	
+	.button:active {
+		-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+				   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+				     -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+				        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
+				color: rgb(255, 255, 255);
+	}
+
+
+/* ----- LAYOUT ----- */
+
+@media only screen and (min-width: 0) {
+	body {
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	body {
+		margin: auto;
+		max-width: 800px;
+	}
+}
+
+
+/* ----- MODULES ----- */
+
+
+/*--- Header --- */
+
+	.site-header {
+		margin: 1em auto;
+	}
+
+	.site-title {
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+		width: 0;
+	}
+
+
+/* --- Content --- */
+
+
+
+/* --- Footer --- */
+	
+	.site-footer {
+		margin: 1em auto;
+	}
+	
+	.site-footer .company-credit {
+		text-align: center;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
