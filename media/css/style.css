@@ -20,6 +20,18 @@ body {
 	padding: 0;
 }
 
+/* --- HTML5 Elements Display --- */
+article, aside, canvas, details, embed, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display: block;
+}
+
+command, datalist, keygen, mark, meter, progress, rp, rt, ruby, time, wbr {
+	display: inline;
+}
+
+
+/* --- Headings --- */
+
 h1, h2, h3, h4, h5, h6 {
 	color: rgb(0, 51, 102);
 	line-height: 1.25em;
@@ -43,6 +55,12 @@ h3 {
 	font-weight: 300;
 }
 
+h4 {
+	font-size: 1em; /* 16px */
+}
+
+
+/* --- Links --- */
 
 a,
 a:link {
