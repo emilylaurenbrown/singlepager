@@ -1,70 +1,101 @@
-/* STYLESHEET */
+/*
+
+
+	1. Base Styling
+	2. Main Page Elements
+	3. Layout
+	4. Modules
+	5. Theme
 
 
 
-/* ----- BASE ----- */
+*/
 
+
+
+/*
+
+		
+		Base Styling
+
+		The type baseline is 1.5 x the font size.
+		All margins and paddings should be 1.5 or some
+		division of 1.5 so that they add up to a full line
+		
+
+*/
+* {
+	/* 
+		That's right, setting the box model to behave like IE6 in quirks mode :O
+		http://paulirish.com/2012/box-sizing-border-box-ftw/
+	*/
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* Page */
 html {
-	background-color: rgb(255, 255, 255);
+	background-color: white;
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	background-color: rgb(255, 255, 255);
+	background-color: white;
 	color: rgb(85, 85, 85);
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	font-size: 100%; /* 16px */
+	font-size: 75%; /* 12px, for mobile */
 	line-height: 1.5em;
 	margin: auto;
-	padding: 0;
+	max-width: 50em; /* Constraining the line length */
+	padding: 1.5em;
 }
 
-/* --- HTML5 Elements Display --- */
-article, aside, canvas, details, embed, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-	display: block;
-}
-
-command, datalist, keygen, mark, meter, progress, rp, rt, ruby, time, wbr {
-	display: inline;
-}
-
-
-/* --- Headings --- */
-
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
 	color: rgb(0, 51, 102);
-	line-height: 1.25em;
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
 }
 
-h1 {
-	font-size: 2.625em; /* 42px / 16px */
+h1, h2 {
 	font-weight: 300;
+	letter-spacing: -0.0125em;
+}
+
+h1 {
+	font-size: 300%;
+	line-height: 1;
+	margin: .5em 0;
 }
 
 h2 {
-	font-size: 2.125em; /* 34px / 16px */
-	font-weight: 300;
+	font-size: 150%;
+	line-height: 1;
+	margin: 1em 0;
 }
 
 h3 {
-	font-size: 1.75em; /* 28px / 16px */
-	font-weight: 300;
+	font-size: 112.5%;
+	line-height: 1.333333333;
+	margin: 1.333333333em 0;
 }
 
-h4 {
-	font-size: 1em; /* 16px */
-}
-
-
-/* --- Links --- */
-
-a,
-a:link {
+/* Links */
+a {
+	border-bottom: 1px solid;
 	color: rgb(102, 194, 239);
+	text-decoration: none;
+	-webkit-transition: color 0.5s;
+	   -moz-transition: color 0.5s;
+	     -o-transition: color 0.5s;
+	        transition: color 0.5s;
+}
+
+a.branding {
+	border-bottom: none;
 }
 
 a:visited,
@@ -74,58 +105,56 @@ a:active {
 
 a:hover,
 a:focus {
-		color: rgb(0, 51, 102);
+	color: rgb(0, 51, 102);
 }
 
-ol,
-ul {
-	
-}
-
-blockquote {
-	
-}
-
-form {
-
-}
-
+/* Forms */
 fieldset {
 	border: none;
+	margin: 1.5em auto;
 }
 
 label {
-	display: inline-block;
+	font-size: 0.875em;
+	line-height: 1.714285714; /* This gets us back on the baseline, since the font-size is smaller */
 }
 
-input[type="text"],
 input[type="email"],
-input[type="number"] {
-	border: 1px solid #E6E6E6;
+input[type="number"],
+input[type="text"],
+input[type="url"],
+textarea {
+	border: 1px solid rgb(230, 230, 230);
 	border-color: rgba(0, 0, 0, 0.125);
 	border-top-color: rgba(0, 0, 0, 0.25);
 	background: rgb(250, 250, 250);
 	-webkit-border-radius: 0.35em;
-	-moz-border-radius: 0.35em;
-	-o-border-radius: 0.35em;
-	border-radius: 0.35em;
+	   -moz-border-radius: 0.35em;
+	     -o-border-radius: 0.35em;
+	        border-radius: 0.35em;
 	-webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
-	-moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
-	-o-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
-	box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
-	color: #707070;
+	   -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
+	     -o-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
+	        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.0625);
 	font-size: 1em;
-	margin: 0 0 0.5em;
-	padding: 0.49em;
-	-webkit-transition: all 500ms ease;
-	-moz-transition: all 500ms ease;
-	-o-transition: all 500ms ease;
-	transition: all 500ms ease;
+	line-height: 0.5;
+	margin: 0;
+	padding: 0.5em;
+	-webkit-transition: background 0.5s ease, border 0.5s, -webkit-box-shadow 0.6s;
+	   -moz-transition: background 0.5s ease, border 0.5s, -moz-box-shadow 0.6s;
+	     -o-transition: background 0.5s ease, border 0.5s, -o-box-shadow 0.6s;
+	        transition: background 0.5s ease, border 0.5s, box-shadow 0.6s;
 }
-	
-input[type="text"]:focus,
+
+textarea {
+	line-height: 1.5;
+}
+
 input[type="email"]:focus,
-input[type="number"]:focus {
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
 	background: rgb(230, 230, 230);
 	border-color: rgb(102, 194, 239);
 	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.125), 0 0 6px rgba(102, 194, 239, 0.5);
@@ -169,7 +198,7 @@ input[type="submit"].view-as-link {
 	   -moz-box-shadow: none;
 	     -o-box-shadow: none;
 	        box-shadow: none;
-	color: #66c2ef;
+	color: rgb(102, 194, 239);
 	font-size: 1em;
 	line-height: 1.5;
 	padding: 0;
@@ -182,15 +211,105 @@ input[type="submit"].view-as-link:hover {
 	   -moz-box-shadow: none;
 	     -o-box-shadow: none;
 	        box-shadow: none;
-	color: #036;
+	color: rgb(0, 51, 102);
 }
-
 
 input.view-as-link:hover {
 	cursor: pointer;
 }
 
-/* --- Buttons --- */
+form ol,
+form ul {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*
+
+
+		Main Page Elements
+
+		Header, Footer, Content, etc.
+		
+
+*/
+
+/*--- Header --- */
+body > header {
+	margin: 1.5em auto;
+	text-align: center;
+}
+
+	.site-title {
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+		width: 0;
+	}
+
+/* --- Footer --- */
+body > footer {
+	margin: 1.5em auto;
+	text-align: center;
+}
+
+
+/*
+
+
+		Layout
+
+
+*/
+@media only screen and (min-width: 480px) {
+	body {
+		font-size: 87.5%;
+	}
+	
+	.standard-form {
+		margin: auto;
+		max-width: 26em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body {
+		font-size: 100%;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+/* 
+
+
+		Modules
+
+
+*/
+
+/*
+
+	Module: Stage
+	The stage is the primary focal area of the page, ie: your featured design actors are on this stage
+	Usage: <div.stage><header.stage><section.stage>
+
+*/
+.stage {
+	padding: 3em 0;
+	text-align: center;
+}
+
+/*
+
+	Module: Button
+	Usage: <a.button><input.button><button.button>
+
+*/
 .button {
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding-box;
@@ -251,87 +370,74 @@ input.view-as-link:hover {
 				color: rgb(255, 255, 255);
 	}
 
+/*
 
-/* ----- LAYOUT ----- */
+	Module: Fieldgroup
+	A container for <label><input> pairs.
+	Usage: <div.fieldgroup><li.fieldgroup>
 
-@media only screen and (min-width: 0) {
-	body {
-	}
+*/
+.fieldgroup {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
+	padding: 0.75em 0;
 }
 
-@media only screen and (min-width: 480px) {
-	body {
-		margin: auto;
-		max-width: 800px;
-	}
+.fieldgroup:last-child {
+	border-bottom: 0;
 }
 
-
-/* ----- MODULES ----- */
-
-
-/*--- Header --- */
-
-	.site-header {
-		margin: 1em auto;
-		text-align: center;
-	}
-
-	.site-title {
-		height: 0;
-		overflow: hidden;
-		position: absolute;
-		width: 0;
-	}
-
-
-/* --- Content --- */
-
-	.primary-content h1 {
-		padding: 0.5em 0;
-		text-align: center;
+	.fieldgroup label:first-child {
+		display: block;
 	}
 	
-	/* --- Form --- */
-		.primary-form {
-			margin: auto;
-			width: 50%;
-		}
-			.primary-form label {
-				font-size: 0.875em;
-				text-align: right;
-				width: 26%;
-			}
-			
-			.primary-form input {
-				width: 69%;
-			}
-			
-			.primary-form .button {
-				width: 100%;
-			}
-
-
-/* --- Footer --- */
-	
-	.site-footer {
-		margin: 1em auto;
+	.fieldgroup input[type="email"],
+	.fieldgroup input[type="number"],
+	.fieldgroup input[type="text"],
+	.fieldgroup input[type="url"],
+	.fieldgroup textarea {
+		margin: 0;
+		width: 100%;
 	}
 	
-	.site-footer .company-credit {
-		text-align: center;
+	.fieldgroup input[type="checkbox"] {
+		margin-right: 1em;
 	}
 
+	/* Clearing - if needed */
+	.fieldgroup:after {clear: both; content: ""; display: block;}
+	.ie6 .fieldgroup,.ie7 .fieldgroup {zoom:1;}
 
 
+/*
 
 
+		Theme
+		
 
+*/
 
+/*
 
+	Theme: Stage
+	Design specific modifications to the stage elements, below is a good start. 
+	Alter as needed for specific scenarios
 
+*/
+.stage h1 {
+	font-size: 600%;
+	margin: 0;
+}
 
+.stage h1:after {
+	border-bottom: 1px solid;
+	content: " ";
+	display: block;
+	font-size: 16.6666667%;
+	margin: 0.75em auto;
+	width: 25%;
+}
 
-
-
-
+.stage h2 {
+	font-size: 300%;
+	margin: 0;
+}
