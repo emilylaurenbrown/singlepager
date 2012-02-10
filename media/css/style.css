@@ -34,6 +34,15 @@
 	        box-sizing: border-box;
 }
 
+/* HTML5 Init */
+article, aside, canvas, details, embed, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+	display: block;
+}
+
+command, datalist, keygen, mark, meter, progress, rp, rt, ruby, time, wbr {
+	display: inline;
+}
+
 /* Page */
 html {
 	background-color: white;
@@ -108,6 +117,13 @@ a:focus {
 	color: rgb(0, 51, 102);
 }
 
+/* Media */
+img {
+	border: none;
+	max-width: 100%;
+	-ms-interpolation-mode: bicubic;
+}
+
 /* Forms */
 fieldset {
 	border: none;
@@ -117,6 +133,10 @@ fieldset {
 label {
 	font-size: 0.875em;
 	line-height: 1.714285714; /* This gets us back on the baseline, since the font-size is smaller */
+}
+
+label:hover {
+	cursor: pointer;
 }
 
 input[type="email"],
@@ -237,7 +257,6 @@ form ul {
 
 /*--- Header --- */
 body > header {
-	margin: 1.5em auto;
 	text-align: center;
 }
 
@@ -262,26 +281,13 @@ body > footer {
 
 
 */
-@media only screen and (min-width: 480px) {
-	body {
-		font-size: 87.5%;
-	}
-	
+@media only screen and (min-width: 480px) {	
 	.standard-form {
 		margin: auto;
 		max-width: 26em;
 	}
 }
 
-@media only screen and (min-width: 768px) {
-	body {
-		font-size: 100%;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-
-}
 
 
 /* 
@@ -300,7 +306,11 @@ body > footer {
 
 */
 .stage {
-	padding: 3em 0;
+	padding: 1.5em 0;
+	text-align: center;
+}
+
+.message {
 	text-align: center;
 }
 
@@ -312,7 +322,8 @@ body > footer {
 */
 .button {
 	-webkit-background-clip: padding-box;
-	-moz-background-clip: padding-box;
+	   -moz-background-clip: padding-box;
+	        background-clip: padding-box;
 	background: linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
 	background: -moz-linear-gradient(top, rgba(148, 212, 244, 1) 0%, rgba(102, 194, 239, 1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(148, 212, 244, 1)), color-stop(100%,rgba(102, 194, 239, 1)));
@@ -322,27 +333,25 @@ body > footer {
 	background: linear-gradient(top, rgba(148, 212, 244, 1) 0%,rgba(102, 194, 239, 1) 100%);
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	-webkit-border-radius: 0.35em;
-	-moz-border-radius: 0.35em;
-	border-radius: 0.35em;
+	   -moz-border-radius: 0.35em;
+	        border-radius: 0.35em;
 	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-	-o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	     -o-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 	color: white;
-	display: inline-block;
-	font-family: 'Helvetica Neue', 'Helvetica', Sans-serif;
+	display: block;
 	font-size: 100%;
 	font-weight: normal;
 	line-height: 1;
 	padding: 0.6em 1em;
 	text-align: center;
 	text-decoration: none;
-	text-shadow: none;
-	text-transform: none;
-	-webkit-transition: all 250ms ease;
-	-moz-transition: all 250ms ease;
-	-o-transition: all 250ms ease;
-	transition: all 250ms ease;
+	-webkit-transition: background 250ms ease, -webkit-box-shadow 0.3s;
+	   -moz-transition: background 250ms ease, -moz-box-shadow 0.3s;
+	     -o-transition: background 250ms ease, -o-box-shadow 0.3s;
+	        transition: background 250ms ease, box-shadow 0.3s;
+	width: 100%;
 }
 
 	.button:hover {
@@ -357,9 +366,8 @@ body > footer {
 		   -moz-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
 		     -o-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
 		        box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.2);
-		color: rgb(255, 255, 255);
+		color: white;
 		cursor: pointer;
-		text-shadow: none;
 	}
 	
 	.button:active {
@@ -424,7 +432,6 @@ body > footer {
 
 */
 .stage h1 {
-	font-size: 600%;
 	margin: 0;
 }
 
@@ -432,12 +439,63 @@ body > footer {
 	border-bottom: 1px solid;
 	content: " ";
 	display: block;
-	font-size: 16.6666667%;
+	font-size: 33.3333333%; /* Bring the font size back down to default - 16/48 (48 = 300%) */
 	margin: 0.75em auto;
 	width: 25%;
 }
 
 .stage h2 {
-	font-size: 300%;
 	margin: 0;
+}
+
+
+/*
+
+
+		State
+
+		@media query states and those produced by Javascript
+
+
+*/
+@media only screen and (min-width: 480px) {
+	body {
+		font-size: 87.5%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	body {
+		font-size: 100%;
+	}
+	
+	body > header {
+		margin: 1.5em auto;
+	}
+	
+	.button {
+		display: inline-block;
+		width: auto;
+	}
+	
+	.stage {
+		padding: 3em 0;
+	}
+	
+	.stage h1 {
+		font-size: 600%;
+	}
+	
+	.stage h1:after {
+		font-size: 16.6666667%;
+	}
+	
+	.stage h2 {
+		font-size: 300%;
+	}
+	
+}
+
+@media only screen and (min-width: 1024px) {
+
 }
